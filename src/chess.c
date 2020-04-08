@@ -5,7 +5,7 @@
 int main()
 {
     FILE* out;
-    out = fopen("chess.html", "w");
+    out = fopen("bin/chess.html", "w");
     setlocale(LC_ALL, "Russian");
     //clang-format off
     fprintf(out,
