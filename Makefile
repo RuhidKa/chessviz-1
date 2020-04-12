@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-c -Wall
-EXECUTABLE=bin/chess.html
+CFLAGS=-c -Wall -MP -MMD
+EXECUTABLE=bin/chess.o
 SOURSES=src/main.c src/board_print_html.c src/board.c
 OBJECTSS=$(SOURSES:.c=.o)
 OBJECTS=$(patsubst src/%,build/%,$(OBJECTSS))
