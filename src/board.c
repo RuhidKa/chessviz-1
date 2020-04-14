@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 void input()
 {
     char ch;
@@ -15,7 +16,8 @@ void input()
             blockkode(x1, y1, x2, y2);
             // printf("%d %d; %d %d\n", x1, y1, x2, y2);
             printdeck();
-            gets();
+            //gets();
+	    sleep(2);
         }
     }
 
