@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main()
+void printdeck()
 {
-    FILE* out;
+    FILE *out, *f;
+    char ch;
     out = fopen("bin/chess.html", "w");
     setlocale(LC_ALL, "Russian");
     //clang-format off
@@ -13,6 +14,7 @@ int main()
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Refresh" content="1" />
   <title>chessviz</title>
   <style type="text/css">
     table.chessboard {
@@ -56,17 +58,34 @@ int main()
 
 <body>
   <table class="chessboard">
+)");
+    f = fopen("src/figure2.txt", "r");
+    while ((ch = getc(f)) != EOF)
+        fprintf(out, "%c", ch);
+    fclose(f);
+    fprintf(out,
+            R"(</table>
+</body>
+</html>)");
+    fclose(out);
+}
+
+void zapoln()
+{
+    FILE* f;
+    f = fopen("src/figure.txt", "w");
+    fprintf(f,
+            R"(<tr>
+<td><span class="black rook"></span></td>
+<td><span class="black knight"></span></td>
+<td><span class="black bishop"></span></td>
+<td><span class="black queen"></span></td>
+<td><span class="black king"></span></td>
+<td><span class="black bishop"></span></td>
+<td><span class="black knight"></span></td>
+<td><span class="black rook"></span></td>
+</tr>
     <tr>
-      <td><span class="black rook"></span></td>
-      <td><span class="black knight"></span></td>
-      <td><span class="black bishop"></span></td>
-      <td><span class="black queen"></span></td>
-      <td><span class="black king"></span></td>
-      <td><span class="black bishop"></span></td>
-      <td><span class="black knight"></span></td>
-      <td><span class="black rook"></span></td>
-    </tr>
-    <tr>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
@@ -74,28 +93,8 @@ int main()
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
-      <td><span class="black pawn"></span></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+<td><span class="black pawn"></span></td>
+</tr>
     <tr>
       <td></td>
       <td></td>
@@ -105,7 +104,7 @@ int main()
       <td></td>
       <td></td>
       <td></td>
-    </tr>
+</tr>
     <tr>
       <td></td>
       <td></td>
@@ -115,17 +114,37 @@ int main()
       <td></td>
       <td></td>
       <td></td>
-    </tr>
+</tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+<td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+</tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+<td></td>
+</tr>
     <tr>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
+<td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
-      <td><span class="white pawn"></span></td>
-      <td><span class="white pawn"></span></td>
-    </tr>
+<td><span class="white pawn"></span></td>
+</tr>
     <tr>
       <td><span class="white rook"></span></td>
       <td><span class="white knight"></span></td>
@@ -135,11 +154,9 @@ int main()
       <td><span class="white bishop"></span></td>
       <td><span class="white knight"></span></td>
       <td><span class="white rook"></span></td>
-    </tr>
-  </table>
-</body>
-</html>)");
-    fclose(out);
-    //clang-format on
-    return 0;
+</tr>)");
+
+    fclose(f);
 }
+//clang-format on
+

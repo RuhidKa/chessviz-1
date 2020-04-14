@@ -1,0 +1,2 @@
+void printdeck();
+void zapoln();
