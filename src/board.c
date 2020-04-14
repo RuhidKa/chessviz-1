@@ -12,7 +12,10 @@ void input()
             getc(f);
             x2 = getc(f) - 96;
             y2 = getc(f) - 48;
-            printf("%d %d; %d %d\n", x1, y1, x2, y2);
+            blockkode(x1, y1, x2, y2);
+            // printf("%d %d; %d %d\n", x1, y1, x2, y2);
+            printdeck();
+            gets();
         }
     }
 
