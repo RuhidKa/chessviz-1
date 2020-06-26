@@ -59,7 +59,7 @@ void printdeck()
 <body>
   <table class="chessboard">
 )");
-    f = fopen("src/figure2.txt", "r");
+    f = fopen("src/figure.txt", "r");
     while ((ch = getc(f)) != EOF)
         fprintf(out, "%c", ch);
     fclose(f);
@@ -76,16 +76,16 @@ void zapoln()
     f = fopen("src/figure.txt", "w");
     fprintf(f,
             R"(<tr>
-<td><span class="black rook"></span></td>
-<td><span class="black knight"></span></td>
-<td><span class="black bishop"></span></td>
-<td><span class="black queen"></span></td>
-<td><span class="black king"></span></td>
-<td><span class="black bishop"></span></td>
-<td><span class="black knight"></span></td>
-<td><span class="black rook"></span></td>
+      <td><span class="black rook"></span></td>
+      <td><span class="black knight"></span></td>
+      <td><span class="black bishop"></span></td>
+      <td><span class="black queen"></span></td>
+      <td><span class="black king"></span></td>
+      <td><span class="black bishop"></span></td>
+      <td><span class="black knight"></span></td>
+      <td><span class="black rook"></span></td>
 </tr>
-    <tr>
+<tr>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
@@ -93,19 +93,9 @@ void zapoln()
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
       <td><span class="black pawn"></span></td>
-<td><span class="black pawn"></span></td>
+      <td><span class="black pawn"></span></td>
 </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-</tr>
-    <tr>
+<tr>
       <td></td>
       <td></td>
       <td></td>
@@ -115,17 +105,17 @@ void zapoln()
       <td></td>
       <td></td>
 </tr>
-    <tr>
+<tr>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-<td></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
 </tr>
-    <tr>
+<tr>
       <td></td>
       <td></td>
       <td></td>
@@ -133,19 +123,29 @@ void zapoln()
       <td></td>
       <td></td>
       <td></td>
-<td></td>
+      <td></td>
 </tr>
-    <tr>
+<tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+</tr>
+<tr>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
-<td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
       <td><span class="white pawn"></span></td>
-<td><span class="white pawn"></span></td>
+      <td><span class="white pawn"></span></td>
+      <td><span class="white pawn"></span></td>
 </tr>
-    <tr>
+<tr>
       <td><span class="white rook"></span></td>
       <td><span class="white knight"></span></td>
       <td><span class="white bishop"></span></td>

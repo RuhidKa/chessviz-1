@@ -3,3 +3,4 @@
 *.c!
 *.htm*
 *.d
+src/figure2*
