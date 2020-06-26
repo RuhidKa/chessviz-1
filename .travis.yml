@@ -1,4 +1,6 @@
 language: C++
+rvm:
+  - gnu
 dist: xenial
 install:
   - sudo apt-get --no-install-recommends -y install cxxtest
