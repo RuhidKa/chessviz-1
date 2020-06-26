@@ -1,6 +1,5 @@
-*.o
+*.o*
 *.swp
-*.c!
 *.htm*
 *.d
 src/figure2*

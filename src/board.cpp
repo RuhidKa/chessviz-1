@@ -1,11 +1,17 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "board_print_html.h"
+#include "figure.h"
 void input()
 {
     char ch;
     FILE* f;
     int x1, x2, y1, y2;
     f = fopen("test.txt", "r");
+    printdeck();
+    system("firefox bin/chess.html"); 
+    sleep(2);
     while ((ch = getc(f)) != EOF) {
         if (ch == ' ') {
             x1 = getc(f) - 96;
