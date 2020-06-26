@@ -159,4 +159,3 @@ void zapoln()
     fclose(f);
 }
 //clang-format on
-
