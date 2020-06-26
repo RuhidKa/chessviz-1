@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "board_print_html.h"
 #include "figure.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 void input()
 {
     char ch;
@@ -10,7 +10,7 @@ void input()
     int x1, x2, y1, y2;
     f = fopen("test.txt", "r");
     printdeck();
-    system("firefox bin/chess.html"); 
+    system("firefox bin/chess.html");
     sleep(2);
     while ((ch = getc(f)) != EOF) {
         if (ch == ' ') {
@@ -22,8 +22,8 @@ void input()
             blockkode(x1, y1, x2, y2);
             // printf("%d %d; %d %d\n", x1, y1, x2, y2);
             printdeck();
-            //gets();
-	    sleep(2);
+            // gets();
+            sleep(2);
         }
     }
 

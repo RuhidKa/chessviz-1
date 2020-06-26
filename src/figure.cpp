@@ -31,7 +31,7 @@ void blockkode(int x1, int y1, int x2, int y2)
                     cc[pp] = c[pp];
                 fprintf(out, "%s", "      <td></td>\n");
             } else if ((i == y2) && (j == x2)) {
-                fprintf(out,"%c",'*');
+                fprintf(out, "%c", '*');
                 fprintf(out, "%c", '\n');
             } else {
                 for (int z = 0; c[z] != '\n'; z++)
@@ -49,16 +49,14 @@ void blockkode(int x1, int y1, int x2, int y2)
     fclose(f);
     out = fopen("src/figure.txt", "w");
     f = fopen("src/figure2.txt", "r");
-    while ((ch = getc(f)) != EOF){
-        if (ch!='*')
+    while ((ch = getc(f)) != EOF) {
+        if (ch != '*')
             fprintf(out, "%c", ch);
-        else{
+        else {
             for (int z = 0; cc[z] != '\n'; z++)
-                    fprintf(out, "%c", cc[z]);
-                //fprintf(out, "%c", '\n');
+                fprintf(out, "%c", cc[z]);
+            // fprintf(out, "%c", '\n');
         }
-           
-        
     }
 
     fclose(f);
