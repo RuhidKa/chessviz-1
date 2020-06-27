@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall -Werror -MP -MMD -std=c++11
+CFLAGS=-c -Wall -MP -MMD -std=c++11
 EXECUTABLE=bin/chess.out
 SOURSES=src/main.cpp src/board_print_html.cpp src/board.cpp src/figure.cpp
 OBJECTSS=$(SOURSES:.cpp=.out)
@@ -15,3 +15,5 @@ build/%.out: src/%.cpp
 .PHONY: clean
 clean:
 	rm -rf build/*.out bin/*.html src/*.out bin/*.out build/*.d
+start:
+	./bin/chess.out
