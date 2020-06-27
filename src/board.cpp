@@ -1,9 +1,9 @@
 #include "board_print_html.h"
+#include "check.h"
 #include "figure.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "check.h"
 void input()
 {
     char ch;
@@ -32,8 +32,8 @@ void input()
                     type = getc(f);
                     x2 = getc(f) - 96;
                     y2 = getc(f) - 48;
-                    if (!check(x1,y1,x2,y2)){
-                        printf("%s","\n\nFAILED SIZE OF VAR X1(2) OR Y1(2)");
+                    if (!check(x1, y1, x2, y2)) {
+                        printf("%s", "\n\nFAILED SIZE OF VAR X1(2) OR Y1(2)");
                         break;
                     }
                     blockkode(x1, y1, x2, y2);
@@ -44,8 +44,8 @@ void input()
                     type = getc(f);
                     x2 = getc(f) - 96;
                     y2 = getc(f) - 48;
-                    if (!check(x1,y1,x2,y2)){
-                        printf("%s","\n\nFAILED SIZE OF VAR X1(2) OR Y1(2)");
+                    if (!check(x1, y1, x2, y2)) {
+                        printf("%s", "\n\nFAILED SIZE OF VAR X1(2) OR Y1(2)");
                         break;
                     }
                     create = '0';
