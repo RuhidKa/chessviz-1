@@ -38,6 +38,7 @@ void blockkode(int x1, int y1, int x2, int y2, char create = '0')
                 } else {
                     printf("%d", create);
                     switch (create) {
+                        //clang-format off
                     case 'Q':
                         if (y2 == 8)
                             fprintf(out,
@@ -77,6 +78,7 @@ void blockkode(int x1, int y1, int x2, int y2, char create = '0')
                             fprintf(out,
                                     R"(      <td><span class="black knight"></span></td>
 )");
+                        //clang-format on
                         break;
                     }
                 }
