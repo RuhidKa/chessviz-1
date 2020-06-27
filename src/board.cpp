@@ -82,5 +82,8 @@ void input()
         }
         printdeck(false);
         fclose(f);
+        //for Werror
+        type++;
+        figure++;
     }
 }
