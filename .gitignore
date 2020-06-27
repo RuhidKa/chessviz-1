@@ -4,3 +4,4 @@
 *.d
 src/figure*
 test2.txt
+thirdparty/ctest*
