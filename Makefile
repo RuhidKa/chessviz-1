@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -MP -MMD -std=c++11
 EXECUTABLE=bin/chess.out
-SOURSES=src/main.cpp src/board_print_html.cpp src/board.cpp src/figure.cpp
+SOURSES=src/main.cpp src/board_print_html.cpp src/board.cpp src/figure.cpp src/check.cpp
 OBJECTSS=$(SOURSES:.cpp=.out)
 OBJECTS=$(patsubst src/%,build/%,$(OBJECTSS))
 
