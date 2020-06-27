@@ -36,7 +36,6 @@ void blockkode(int x1, int y1, int x2, int y2, char create = '0')
                     fprintf(out, "%c", '*');
                     fprintf(out, "%c", '\n');
                 } else {
-                    printf("%d", create);
                     switch (create) {
                         //clang-format off
                     case 'Q':
