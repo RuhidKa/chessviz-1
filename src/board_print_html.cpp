@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void printdeck()
+void printdeck(bool flag = true)
 {
     FILE *out, *f;
     char ch;
@@ -13,9 +13,11 @@ void printdeck()
             R"(<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Refresh" content="1" />
-  <title>chessviz</title>
+  <meta charset="utf-8">)");
+    if (flag == true)
+        fprintf(out, R"(   <meta http-equiv="Refresh" content="0.5" />
+)");
+    fprintf(out, R"(   <title>chessviz</title>
   <style type="text/css">
     table.chessboard {
       border: 5px solid #333;
@@ -74,8 +76,14 @@ void zapoln()
 {
     FILE* f;
     f = fopen("src/figure.txt", "w");
-    fprintf(f,
-            R"(<tr>
+    if (f == 0)
+        printf("%s",
+               "\n\nERROR FILE PATH, TRY GO OUT FROM BIN AND WRITE make\nor "
+               "make "
+               "start if project already builded");
+    else {
+        fprintf(f,
+                R"(<tr>
       <td><span class="black rook"></span></td>
       <td><span class="black knight"></span></td>
       <td><span class="black bishop"></span></td>
@@ -156,6 +164,7 @@ void zapoln()
       <td><span class="white rook"></span></td>
 </tr>)");
 
-    fclose(f);
+        fclose(f);
+    }
 }
 //clang-format on

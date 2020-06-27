@@ -1,6 +1,5 @@
-#include <stdio.h>
 #ifndef PRINT_HTML
 #define PRINT_HTML
-void printdeck();
+void printdeck(bool flag = true);
 void zapoln();
 #endif

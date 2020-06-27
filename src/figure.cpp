@@ -1,7 +1,8 @@
+#include <locale.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-
-void blockkode(int x1, int y1, int x2, int y2)
+void blockkode(int x1, int y1, int x2, int y2, char create = '0')
 {
     FILE *f, *out;
     int i, j;
@@ -31,8 +32,54 @@ void blockkode(int x1, int y1, int x2, int y2)
                     cc[pp] = c[pp];
                 fprintf(out, "%s", "      <td></td>\n");
             } else if ((i == y2) && (j == x2)) {
-                fprintf(out, "%c", '*');
-                fprintf(out, "%c", '\n');
+                if (create == '0') {
+                    fprintf(out, "%c", '*');
+                    fprintf(out, "%c", '\n');
+                } else {
+                    printf("%d", create);
+                    switch (create) {
+                    case 'Q':
+                        if (y2 == 8)
+                            fprintf(out,
+                                    R"(      <td><span class="white queen"></span></td>
+)");
+                        else
+                            fprintf(out,
+                                    R"(      <td><span class="black queen"></span></td>
+)");
+                        break;
+                    case 'B':
+                        if (y2 == 8)
+                            fprintf(out,
+                                    R"(      <td><span class="white bishop"></span></td>
+)");
+                        else
+                            fprintf(out,
+                                    R"(      <td><span class="black bishop"></span></td>
+)");
+                        break;
+                    case 'R':
+                        if (y2 == 8)
+                            fprintf(out,
+                                    R"(      <td><span class="white rook"></span></td>
+)");
+                        else
+                            fprintf(out,
+                                    R"(      <td><span class="black rook"></span></td>
+)");
+                        break;
+                    case 'N':
+                        if (y2 == 8)
+                            fprintf(out,
+                                    R"(      <td><span class="white knight"></span></td>
+)");
+                        else
+                            fprintf(out,
+                                    R"(      <td><span class="black knight"></span></td>
+)");
+                        break;
+                    }
+                }
             } else {
                 for (int z = 0; c[z] != '\n'; z++)
                     fprintf(out, "%c", c[z]);
