@@ -1,4 +1,6 @@
 #include "board_print_html.h"
+#include "figure.h"
+#include "board.h"
 #include "check.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -31,6 +33,38 @@ public:
         char ch1,ch2;
         f1=fopen("test/files/zapoln.txt","r");
         zapoln();
+        f2=fopen("src/figure.txt","r");
+        while (((ch1=getc(f1))!=EOF)&&((ch2=getc(f2))!=EOF)){
+            TS_ASSERT(ch1==ch2);
+        }
+        fclose(f1);
+        fclose(f2);
+    }
+public:
+    void test_blockkode(void)
+    {
+        FILE *f1,*f2;
+        char ch1,ch2;
+        f1=fopen("test/files/block.txt","r");
+        zapoln();
+        blockkode(1,2,1,8,'Q');
+        blockkode(3,1,4,2);
+        blockkode(1,8,2,8);
+        f2=fopen("src/figure.txt","r");
+        while (((ch1=getc(f1))!=EOF)&&((ch2=getc(f2))!=EOF)){
+            TS_ASSERT(ch1==ch2);
+        }
+        fclose(f1);
+        fclose(f2);
+    }
+public:
+    void test_input(void)
+    {
+        FILE *f1,*f2;
+        char ch1,ch2;
+        zapoln();
+        input();
+        f1=fopen("test/files/input.txt","r");
         f2=fopen("src/figure.txt","r");
         while (((ch1=getc(f1))!=EOF)&&((ch2=getc(f2))!=EOF)){
             TS_ASSERT(ch1==ch2);
